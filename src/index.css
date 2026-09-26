@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom playful pattern backgrounds */
+.bg-doodle-pattern {
+  background-image: radial-gradient(#fbbf24 1.5px, transparent 1.5px), radial-gradient(#f05a21 1.5px, #FFFDF9 1.5px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-opacity: 0.15;
+}
+
+.bg-festive-grid {
+  background-color: #ffbd0a;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.25) 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
+/* SuperOwly-style curved scallop wave top / bottom */
+.scallop-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.scallop-divider svg {
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf6ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffbd0a;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f05a21;
+}
+
+/* Playful badge text */
+.font-fredoka {
+  font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+/* Bulletproof Smooth Scroll Animations */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale-init {
+  opacity: 0;
+  transform: scale(0.93) translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.34, 1.25, 0.64, 1), transform 0.65s cubic-bezier(0.34, 1.25, 0.64, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .reveal-scale-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Stagger animation delay utilities */
+.delay-75  { transition-delay: 75ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-225 { transition-delay: 225ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-375 { transition-delay: 375ms; }
+.delay-450 { transition-delay: 450ms; }
+
+/* Custom Playful & Smooth Animation Keyframes */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1.5deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2.4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-11px) rotate(1.2deg);
+  }
+}
+
+.animate-float {
+  animation: float 3.6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 5.2s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4.5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+/* Reading scroll progress bar at top of window */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #ffbd0a, #f05a21, #e53935);
+  z-index: 999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 1px 3px rgba(240, 90, 33, 0.4);
+}
+
