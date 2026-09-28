@@ -353,7 +353,7 @@ export const galleryItems = [
 
 export const faqsList = [
   {
-    question: "What is the age criteria for admission to Playgroup & Nursery for 2025-26?",
+    question: "What is the age criteria for admission to Playgroup & Nursery for 2027-28?",
     answer: "As per the NEP 2020 guidelines: For Playgroup, child should be 2 years complete as of June 1st. For Nursery, child should be 3 years complete. For LKG and UKG, 4 and 5 years respectively."
   },
   {

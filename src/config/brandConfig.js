@@ -22,7 +22,7 @@ export const brandConfig = {
     googleMapsUrl: "https://maps.google.com/?q=Bellandur+Bengaluru"
   },
   admissions: {
-    year: "2025 – 2026",
+    year: "2027 – 2028",
     status: "Admissions Open",
     badge: "Limited Seats for Playgroup & Nursery"
   }

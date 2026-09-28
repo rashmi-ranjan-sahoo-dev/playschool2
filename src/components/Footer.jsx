@@ -71,23 +71,29 @@ export default function Footer({ brand, onOpenInquiryModal }) {
               <Phone className="w-5 h-5" />
             </div>
             <h4 className="text-lg font-bold font-fredoka text-white">Direct Contact</h4>
-            <div className="text-xs text-slate-400 space-y-2">
-              <p>
-                <span className="text-slate-500 block">Admissions Desk:</span>
-                <a href={`tel:${brand.contact.phone.replace(/[^0-9+]/g, '')}`} className="font-bold text-white hover:text-amber-400">
+            <div className="text-xs text-slate-400 space-y-2.5">
+              <div>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">Admissions Desk</span>
+                <a href={`tel:${brand.contact.phone.replace(/[^0-9+]/g, '')}`} className="font-bold text-white hover:text-amber-400 text-sm transition-colors">
                   {brand.contact.phone}
                 </a>
-              </p>
-              <p>
-                <span className="text-slate-500 block">Landline:</span>
-                <span className="text-slate-300">{brand.contact.alternatePhone}</span>
-              </p>
-              <p>
-                <span className="text-slate-500 block">Email:</span>
-                <a href={`mailto:${brand.contact.email}`} className="text-slate-300 hover:text-amber-400">
+              </div>
+              <div>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">Office Landline</span>
+                <span className="text-slate-300 font-medium">{brand.contact.alternatePhone}</span>
+              </div>
+              <div>
+                <span className="text-slate-500 block text-[11px] uppercase tracking-wider">Admissions Email</span>
+                <a href={`mailto:${brand.contact.email}`} className="text-slate-300 hover:text-amber-400 transition-colors">
                   {brand.contact.email}
                 </a>
-              </p>
+              </div>
+              {brand.contact.cctvHelpline && (
+                <div className="pt-1 border-t border-slate-900">
+                  <span className="text-amber-400/90 block text-[11px] font-semibold">24x7 Parent Support</span>
+                  <span className="text-slate-400 text-[11px]">{brand.contact.cctvHelpline}</span>
+                </div>
+              )}
             </div>
           </div>
 

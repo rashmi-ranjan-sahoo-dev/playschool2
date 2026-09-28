@@ -101,7 +101,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
                     </span>
                   </div>
                   <h3 className="text-lg font-bold font-fredoka text-slate-800 group-hover:text-coral-600 transition-colors mb-2">
-                    Admissions 2025-26
+                    Admissions 2027-28
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                     Enrolling for Playgroup, Nursery, LKG & UKG. Limited to 15 students per batch for dedicated 1:8 mentor attention.

@@ -50,6 +50,15 @@
   background: #f05a21;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Playful badge text */
 .font-fredoka {
   font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
