@@ -3,10 +3,10 @@ import { ArrowRight, Sparkles, Clock, Users } from 'lucide-react';
 import { programsList } from '../data/schoolData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-export default function ProgramsSection({ 
+export default function ProgramsSection({
   onOpenInquiryModal,
   activeFilter,
-  onFilterChange 
+  onFilterChange
 }) {
   const [internalFilter, setInternalFilter] = useState('all');
   const [sectionRef, isVisible] = useScrollReveal({ threshold: 0.05, fallbackDelay: 400 });
@@ -24,7 +24,7 @@ export default function ProgramsSection({
   return (
     <section ref={sectionRef} id="programs" className="scroll-mt-20 sm:scroll-mt-24 py-10 sm:py-12 lg:py-14 bg-gradient-to-b from-[#FFFDF9] via-amber-50/30 to-[#FFFDF9] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className={`programs-header text-center max-w-2xl mx-auto mb-5 sm:mb-6 reveal-init ${isVisible ? 'reveal-visible' : ''}`}>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold uppercase tracking-wider mb-2 font-fredoka shadow-2xs">
@@ -47,11 +47,10 @@ export default function ProgramsSection({
             <button
               key={tab.id}
               onClick={() => setFilter(tab.id)}
-              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold font-fredoka uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                filter === tab.id
+              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold font-fredoka uppercase tracking-wider transition-all duration-200 cursor-pointer ${filter === tab.id
                   ? 'bg-amber-500 text-slate-900 shadow-xs scale-102'
                   : 'bg-white hover:bg-amber-100/70 text-slate-600 border border-slate-200/80 shadow-2xs'
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -74,7 +73,7 @@ export default function ProgramsSection({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent" />
-                  
+
                   <span className="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur text-slate-800 text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-2xs font-fredoka">
                     {prog.age}
                   </span>

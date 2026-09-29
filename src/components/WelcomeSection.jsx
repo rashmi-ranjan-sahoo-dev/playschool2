@@ -20,13 +20,13 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
   return (
     <section ref={sectionRef} id="why-us" className="scroll-mt-20 sm:scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-[#FFFDF9] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Main Grid: Left Column (8 cols) + Right Column (4 cols) - Layout preserved */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          
+
           {/* Left Column (8 cols): Why Us, Panchakosha & 2 Highlight Cards */}
           <div className="lg:col-span-8 space-y-6 sm:space-y-8">
-            
+
             {/* Header Badge & Title */}
             <div className={`welcome-header reveal-init ${isVisible ? 'reveal-visible' : ''}`}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3.5 font-fredoka shadow-2xs">
@@ -63,9 +63,8 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
                 {panchakoshaPillars.map((p, idx) => (
                   <div
                     key={idx}
-                    className={`panchakosha-card bg-white p-3 rounded-2xl border border-amber-100/90 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between group cursor-default ${p.color} ${
-                      idx === 4 ? 'col-span-2 sm:col-span-1' : ''
-                    } reveal-scale-init ${isVisible ? 'reveal-visible' : ''} ${delays[idx] || ''}`}
+                    className={`panchakosha-card bg-white p-3 rounded-2xl border border-amber-100/90 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between group cursor-default ${p.color} ${idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+                      } reveal-scale-init ${isVisible ? 'reveal-visible' : ''} ${delays[idx] || ''}`}
                   >
                     <div>
                       <div className="text-2xl mb-1.5 group-hover:scale-125 transition-transform duration-300 inline-block">
@@ -88,7 +87,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
 
             {/* 2 SuperOwly Highlight Cards (Clean, Attractive, Reduced Data) */}
             <div className="welcome-highlight-grid grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 pt-1">
-              
+
               {/* Card 1: Admissions */}
               <div className={`welcome-highlight-card group bg-white p-6 rounded-3xl border border-coral-100/90 shadow-sm hover:shadow-xl hover:border-coral-300 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 reveal-init ${isVisible ? 'reveal-visible' : ''} delay-225`}>
                 <div>
@@ -107,7 +106,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
                     Enrolling for Playgroup, Nursery, LKG & UKG. Limited to 15 students per batch for dedicated 1:8 mentor attention.
                   </p>
                 </div>
-                
+
                 <button
                   onClick={() => onOpenInquiryModal('Vacancies Card')}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-coral-600 hover:text-coral-700 uppercase tracking-wider font-fredoka group-hover:translate-x-1 transition-all cursor-pointer pt-2 border-t border-slate-100"
@@ -135,7 +134,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
                     Live mobile CCTV streaming for parents, loving verified Didis, child-safe rounded furniture, and on-call pediatric care.
                   </p>
                 </div>
-                
+
                 <button
                   onClick={() => onOpenInquiryModal('Safety Card')}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 uppercase tracking-wider font-fredoka group-hover:translate-x-1 transition-all cursor-pointer pt-2 border-t border-slate-100"
@@ -151,7 +150,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
 
           {/* Right Column (4 cols): Upcoming Celebrations Widget - Layout Preserved */}
           <div className={`welcome-events-widget lg:col-span-4 bg-white p-6 sm:p-7 rounded-3xl border border-amber-100 shadow-xl lg:sticky lg:top-24 reveal-init ${isVisible ? 'reveal-visible' : ''} delay-150`}>
-            
+
             <div className="border-b border-slate-100 pb-3.5 mb-5 flex items-center justify-between">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-coral-500 font-fredoka block">
@@ -175,7 +174,7 @@ export default function WelcomeSection({ brand, onOpenInquiryModal }) {
                   onClick={() => onOpenInquiryModal(`Event: ${event.title}`)}
                 >
                   <div className="flex gap-3.5 items-start">
-                    
+
                     {/* Event Date Badge (SuperOwly signature calendar block) */}
                     <div className="w-13 h-13 rounded-2xl bg-amber-400 group-hover:bg-amber-500 text-slate-900 flex flex-col items-center justify-center font-fredoka shrink-0 shadow-2xs transition-colors">
                       <span className="text-[10px] font-bold uppercase leading-none tracking-wide text-slate-800">

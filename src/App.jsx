@@ -25,6 +25,13 @@ export default function App() {
   const [programFilter, setProgramFilter] = useState('all');
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Set page document title to brand name
+  useEffect(() => {
+    if (activeBrand?.name) {
+      document.title = activeBrand.name;
+    }
+  }, [activeBrand]);
+
   // Dynamic window scroll percentage tracker
   useEffect(() => {
     const handleScroll = () => {

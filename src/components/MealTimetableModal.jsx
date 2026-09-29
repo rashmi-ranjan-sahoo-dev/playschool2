@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   X, Apple, Sparkles, Clock, CheckCircle2, 
   ChevronRight, Calendar, Leaf 
@@ -12,6 +12,26 @@ export default function MealTimetableModal({
   onNavigateRoutine 
 }) {
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -33,9 +53,14 @@ export default function MealTimetableModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-fadeIn overflow-y-auto">
+    <div 
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-fadeIn overflow-y-auto cursor-pointer"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
       <div 
-        className="relative max-w-3xl w-full bg-white text-slate-800 rounded-3xl shadow-2xl border border-amber-200 overflow-hidden my-6 flex flex-col max-h-[92vh]"
+        className="relative max-w-3xl w-full bg-white text-slate-800 rounded-3xl shadow-2xl border border-amber-200 overflow-hidden my-6 flex flex-col max-h-[92vh] cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Ribbon Header */}

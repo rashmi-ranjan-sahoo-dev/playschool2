@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Calendar, Phone, User, Baby, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -14,6 +14,32 @@ export default function InquiryModal({ isOpen, onClose, brand, source = "General
   });
 
   const [submitted, setSubmitted] = useState(false);
+
+  const resetAndClose = () => {
+    setSubmitted(false);
+    onClose();
+  };
+
+  // Close on Escape key and prevent background page scroll while popup is open
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        resetAndClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -33,16 +59,19 @@ export default function InquiryModal({ isOpen, onClose, brand, source = "General
     }
   };
 
-  const resetAndClose = () => {
-    setSubmitted(false);
-    onClose();
-  };
-
   const whatsappMessage = `Hello ${brand.name}, I would like to book a campus tour.\nParent Name: ${formData.parentName}\nChild Name: ${formData.childName}\nAge: ${formData.childAge}\nProgram: ${formData.program}\nPreferred Visit Date: ${formData.visitDate}`;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-fadeIn">
-      <div className="relative max-w-lg w-full bg-white rounded-3xl shadow-2xl border border-amber-200 overflow-hidden my-8">
+    <div 
+      className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-fadeIn cursor-pointer"
+      onClick={resetAndClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div 
+        className="relative max-w-lg w-full bg-white rounded-3xl shadow-2xl border border-amber-200 overflow-hidden my-8 cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Modal Header */}
         <div className="bg-gradient-to-r from-amber-500 to-coral-500 text-white p-6 sm:p-7 relative">

@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Video, Lock } from 'lucide-react';
 
 export default function CctvModal({ isOpen, onClose, brand }) {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-      <div className="relative max-w-lg w-full bg-slate-900 text-white rounded-3xl shadow-2xl border border-slate-700 overflow-hidden">
+    <div 
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn cursor-pointer"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div 
+        className="relative max-w-lg w-full bg-slate-900 text-white rounded-3xl shadow-2xl border border-slate-700 overflow-hidden cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Header */}
         <div className="p-6 bg-slate-950 flex items-center justify-between border-b border-slate-800">

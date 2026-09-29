@@ -34,21 +34,19 @@ export default function HeroSlider({ brand, onOpenInquiryModal }) {
 
   return (
     <section ref={sliderRef} id="home" className="relative w-full h-[360px] sm:h-[460px] md:h-[540px] lg:h-[600px] bg-slate-900 overflow-hidden select-none">
-      
+
       {/* Slides Container */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
         >
           <img
             src={slide.image}
             alt={slide.alt}
-            className={`w-full h-full object-cover object-center transform transition-transform duration-7000 ease-out ${
-              index === currentSlide ? 'scale-105' : 'scale-100'
-            }`}
+            className={`w-full h-full object-cover object-center transform transition-transform duration-7000 ease-out ${index === currentSlide ? 'scale-105' : 'scale-100'
+              }`}
           />
           {/* Subtle soft gradient overlay only at the top/bottom for card overlap legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/15" />
@@ -105,9 +103,8 @@ export default function HeroSlider({ brand, onOpenInquiryModal }) {
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-              currentSlide === idx ? 'w-8 bg-amber-400 shadow-md' : 'w-2.5 bg-white/60 hover:bg-white'
-            }`}
+            className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${currentSlide === idx ? 'w-8 bg-amber-400 shadow-md' : 'w-2.5 bg-white/60 hover:bg-white'
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
