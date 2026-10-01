@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
                       {current.parentName}
                     </h4>
                     <p className="text-[11px] text-slate-500 truncate">
-                      {current.relation} • <span className="text-coral-500 font-semibold">{current.city}</span>
+                      {current.relation}
                     </p>
                   </div>
                   <span className="shrink-0 text-[9px] sm:text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200/80 font-fredoka">

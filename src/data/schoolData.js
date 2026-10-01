@@ -253,8 +253,7 @@ export const testimonialsList = [
     id: 1,
     parentName: "Dr. Ananya Iyer & Dr. R. Iyer",
     relation: "Parents of Aarav (Age 3.5 - Nursery)",
-    city: "Bengaluru",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/parent_avatar_1.jpg",
     quote: "As medical professionals, safety, cleanliness, and emotional security were our highest priorities. The live CCTV access gives us complete peace of mind during our hospital rounds. Aarav now chants the Gayatri mantra every morning before his breakfast!",
     rating: 5,
     tag: "Doctor Parents"
@@ -263,8 +262,7 @@ export const testimonialsList = [
     id: 2,
     parentName: "Vikram & Priya Malhotra",
     relation: "Parents of Samaira (Age 2.5 - Playgroup)",
-    city: "Mumbai",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/parent_avatar_2.jpg",
     quote: "The warmth of the Didis and teachers is incredible. Samaira used to be extremely shy, but within 2 months of joining Anand Vatika, she sings nursery rhymes in both English and Hindi and eagerly packs her school bag every morning.",
     rating: 5,
     tag: "Tech Professional Parents"
@@ -273,8 +271,7 @@ export const testimonialsList = [
     id: 3,
     parentName: "Sunita & Rajesh Aggarwal",
     relation: "Parents of Dhruv (Age 5 - UKG)",
-    city: "Delhi NCR",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    avatar: "/images/parent_avatar_3.jpg",
     quote: "Dhruv cleared the admission interviews of three of the top CBSE schools effortlessly! The school's Vidya Pravesh program gave him remarkable phonics reading speed, math intuition, and courteous stage presence.",
     rating: 5,
     tag: "Primary School Transition"
